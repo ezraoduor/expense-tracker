@@ -30,7 +30,7 @@ header p {
   align-items: flex-start;
 }
 
-/* Form */
+
 .form {
   width: 300px;
   padding: 1rem;
@@ -57,7 +57,7 @@ header p {
   cursor: pointer;
 }
 
-/* Table + Search */
+
 .table-area {
   flex: 1;
 }
