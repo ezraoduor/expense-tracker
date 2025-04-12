@@ -3,45 +3,11 @@ import React from 'react';
 const ExpenseForm = ({ form, onChange, onSubmit }) => {
   return (
     <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        name="expense"
-        value={form.expense}
-        onChange={onChange}
-        placeholder="Expense"
-        required
-      />
-      <input
-        type="text"
-        name="description"
-        value={form.description}
-        onChange={onChange}
-        placeholder="Description"
-        required
-      />
-      <input
-        type="number"
-        name="amount"
-        value={form.amount}
-        onChange={onChange}
-        placeholder="Amount"
-        required
-      />
-      <input
-        type="text"
-        name="category"
-        value={form.category}
-        onChange={onChange}
-        placeholder="Category"
-        required
-      />
-      <input
-        type="date"
-        name="date"
-        value={form.date}
-        onChange={onChange}
-        required
-      />
+      <input type="text" name="expense" placeholder="Expense" value={form.expense} onChange={onChange} />
+      <input type="text" name="description" placeholder="Description" value={form.description} onChange={onChange} />
+      <input type="text" name="category" placeholder="Category" value={form.category} onChange={onChange} />
+      <input type="number" name="amount" placeholder="Amount" value={form.amount} onChange={onChange} />
+      <input type="date" name="date" value={form.date} onChange={onChange} />
       <button type="submit">Add Expense</button>
     </form>
   );

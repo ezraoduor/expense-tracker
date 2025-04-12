@@ -8,10 +8,10 @@ const ExpenseTable = ({ expenses, onDelete }) => {
           <tr>
             <th>Expense</th>
             <th>Description</th>
-            <th>Amount</th>
             <th>Category</th>
+            <th>Amount</th>
             <th>Date</th>
-            <th>Action</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -19,8 +19,8 @@ const ExpenseTable = ({ expenses, onDelete }) => {
             <tr key={index}>
               <td>{expense.expense}</td>
               <td>{expense.description}</td>
-              <td>{expense.amount}</td>
               <td>{expense.category}</td>
+              <td>{expense.amount}</td>
               <td>{expense.date}</td>
               <td>
                 <button onClick={() => onDelete(index)}>Delete</button>

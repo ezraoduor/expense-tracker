@@ -3,17 +3,19 @@ import './App.css';
 import ExpenseForm from './components/ExpenseForm';
 import SearchBar from './components/SearchBar';
 import ExpenseTable from './components/ExpenseTable';
-import expenses from './data'; 
+import data from './data';
 
 function App() {
-  const [expensesList, setExpensesList] = useState(expenses); 
+  const [expenses, setExpenses] = useState(data);
+
   const [form, setForm] = useState({
     expense: '',
     description: '',
-    amount: '',
     category: '',
+    amount: '',
     date: ''
   });
+
   const [search, setSearch] = useState('');
 
   const handleChange = (e) => {
@@ -22,25 +24,18 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(form).every((v) => v !== '')) {
-      const newExpense = { ...form };
-      setExpensesList([...expensesList, newExpense]);
-      setForm({
-        expense: '',
-        description: '',
-        amount: '',
-        category: '',
-        date: ''
-      });
+    if (Object.values(form).every(v => v !== '')) {
+      setExpenses([...expenses, form]);
+      setForm({ expense: '', description: '', category: '', amount: '', date: '' });
     }
   };
 
-  const handleDelete = (index) => {
-    setExpensesList(expensesList.filter((_, i) => i !== index)); 
+  const handleDelete = (indexToDelete) => {
+    setExpenses(expenses.filter((_, index) => index !== indexToDelete));
   };
 
-  const filtered = expensesList.filter(
-    (item) =>
+  const filtered = expenses.filter(
+    item =>
       item.expense.toLowerCase().includes(search.toLowerCase()) ||
       item.description.toLowerCase().includes(search.toLowerCase())
   );
@@ -49,12 +44,14 @@ function App() {
     <div className="app">
       <header>
         <h1>Expense Tracker</h1>
-        <p>Start taking control of your finances with this. Record, categorize, and analyze your spending.</p>
+        <p>Start taking control of your finances. Record, categorize and analyze your spending.</p>
       </header>
 
       <div className="main">
-        <ExpenseForm form={form} onChange={handleChange} onSubmit={handleSubmit} />
-        <div className="table-area">
+        <div className="form-section">
+          <ExpenseForm form={form} onChange={handleChange} onSubmit={handleSubmit} />
+        </div>
+        <div className="table-section">
           <SearchBar search={search} onSearchChange={setSearch} />
           <ExpenseTable expenses={filtered} onDelete={handleDelete} />
         </div>

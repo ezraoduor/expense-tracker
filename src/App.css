@@ -88,11 +88,12 @@ form button:hover {
 
 .search-bar {
   margin-bottom: 30px;
+  
 }
 
 .search-bar input {
-  width: 200px;
-  height: 400px;
+  width: 800px;
+  height: 40px;
 
 }
 table {
