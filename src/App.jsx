@@ -8,13 +8,7 @@ import data from './data';
 function App() {
   const [expenses, setExpenses] = useState(data);
 
-  const [form, setForm] = useState({
-    expense: '',
-    description: '',
-    category: '',
-    amount: '',
-    date: ''
-  });
+  const [form, setForm] = useState({expense: '',description: '',category: '',amount: '',date: '' });
 
   const [search, setSearch] = useState('');
 
@@ -24,11 +18,23 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(form).every(v => v !== '')) {
+    const values = Object.values(form);
+    let allFilled = true;
+  
+    for (let i = 0; i < values.length; i++) {
+      if (values[i].trim() === '') {
+        allFilled = false;
+      }
+    }
+  
+    if (allFilled) {
       setExpenses([...expenses, form]);
       setForm({ expense: '', description: '', category: '', amount: '', date: '' });
+    } else {
+      alert('Please fill in all the blanks before submitting.');
     }
   };
+  
 
   const handleDelete = (indexToDelete) => {
     setExpenses(expenses.filter((_, index) => index !== indexToDelete));
