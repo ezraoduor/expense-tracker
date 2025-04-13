@@ -29,7 +29,7 @@ const ExpenseTable = ({ expenses, onDelete }) => {
           ))}
         </tbody>
       </table>
-    </div>
+  </div>
   );
 };
 
