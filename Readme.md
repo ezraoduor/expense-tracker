@@ -27,21 +27,30 @@ Changes to the code will automatically refresh the browser.
 
 expense-tracker/
 │
-│
-├── src/                   # Main source code folder
-│   ├── components/        # Reusable React components
-│   │   ├── ExpenseForm.js     # Form to add new expenses
-│   │   ├── ExpenseTable.js    # Displays expense list in a table
-│   │   └── SearchBar.js       # Search input for filtering expenses
+src/                   # Main source code folder
+
+│   components/        # Reusable React components
+
+│   │ExpenseForm.js     # Form to add new expenses
+
+│   │ExpenseTable.js    # Displays expense list in a table
+
+│   │SearchBar.js       # Search input for filtering expenses
 │   │
-│   ├── data.js            # Predefined static expense data
-│   ├── App.js             # Main component managing state and layout
-│   ├── App.css            # Main CSS styles (black & white theme)
+│   ├── data.js  
+
+│   ├── App.js   
+
+│   ├── App.css 
+
 │   └── index.js           
 │
-├── .gitignore             
-├── package.json           
-├── README.md              
+├── .gitignore 
+
+├── package.json 
+
+├── README.md   
+           
 └── vite.config.js / 
 
 ## How the expense tracker works
