@@ -36,7 +36,8 @@ src/- Main source code folder
 │   │ExpenseTable.js -Displays expense list in a table
 
 │   │SearchBar.js -Search input for filtering expenses
-│   │
+
+
 │   ├── data.js  
 
 │   ├── App.js   
