@@ -50,7 +50,7 @@ function App() {
     <div className="app">
       <header>
         <h1>Expense Tracker</h1>
-        <p>Start taking control of your finances. Record, categorize and analyze your spending.</p>
+        <p>Start taking control of your finances. Record, categorize and analyze your spending.With this app you can improve on your savings </p>
       </header>
 
       <div className="main">

@@ -7,7 +7,7 @@ const expenses = [
       date: '2025-04-01',
     },
     {
-      expense: 'Electricity Bill',
+      expense: 'KPLC tokens',
       description: 'Monthly payment for electricity consumption.',
       amount: '100',
       category: 'Bills',
